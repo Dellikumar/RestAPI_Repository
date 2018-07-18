@@ -9,6 +9,13 @@ public class TestBase {
 	
 	public static Properties pro;
 	
+	public int STATUS_HTTP_200=200;
+	public int STATUS_HTTP_201=201;
+	public int STATUS_HTTP_400=400;
+	public int STATUS_HTTP_404=404;
+	
+	
+	
 	
 	public TestBase()
 	{

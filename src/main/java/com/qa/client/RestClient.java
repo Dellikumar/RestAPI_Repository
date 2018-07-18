@@ -2,54 +2,43 @@ package com.qa.client;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
-import org.apache.http.Header;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
 
 import com.qa.base.TestBase;
 
 public class RestClient extends TestBase{
-	
-	public void get(String url) throws ClientProtocolException, IOException
+	//without headers
+	public CloseableHttpResponse get(String url) throws ClientProtocolException, IOException
 	{
 		//to create client
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet httpget=new HttpGet(url);
+		//client hit the GET method
 		CloseableHttpResponse closablehttpresponse = httpClient.execute(httpget);
 		
-		//to get response code
-		int statuscode = closablehttpresponse.getStatusLine().getStatusCode();
-		System.out.println(statuscode);
+		return closablehttpresponse;
+    }
+	
+	//with headers
+	public CloseableHttpResponse get(String url ,HashMap<String, String> headermap) throws ClientProtocolException, IOException
+	{
+		//to create client
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpGet httpget=new HttpGet(url);
 		
-		//to get response string
-		
-		String stringResponse = EntityUtils.toString(closablehttpresponse.getEntity(), "UTF-8");
-		System.out.println("Normal string response ---->" + stringResponse);
-		
-		//convert normal response to JSONObject
-		
-		JSONObject jsonresponse =new JSONObject(stringResponse);
-		
-		System.out.println("json response ---->" + jsonresponse);
-		
-		//to get all headers
-		Header[] allheaders = closablehttpresponse.getAllHeaders();
-		
-		HashMap<String, String> hashmap=new HashMap<String, String>();
-		
-		for(Header properheader:allheaders)
+		for(Entry<String, String> entry:headermap.entrySet())
 		{
-              hashmap.put(properheader.getName(), properheader.getValue());
+			httpget.addHeader(entry.getKey(), entry.getValue());
 		}
+		//client hit the GET method
+		CloseableHttpResponse closablehttpresponse = httpClient.execute(httpget);
 		
-		System.out.println("The header values are =====>" +hashmap);
-		
- 	}
-
+		return closablehttpresponse;
+    }
 }

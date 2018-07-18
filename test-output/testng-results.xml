@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1562" started-at="2018-07-17T14:18:24Z" finished-at="2018-07-17T14:18:26Z">
+  <suite name="Default suite" duration-ms="3994" started-at="2018-07-18T07:37:15Z" finished-at="2018-07-18T07:37:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1562" started-at="2018-07-17T14:18:24Z" finished-at="2018-07-17T14:18:26Z">
+    <test name="Default test" duration-ms="3994" started-at="2018-07-18T07:37:15Z" finished-at="2018-07-18T07:37:19Z">
       <class name="com.qa.tests.Get_Call">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.Get_Call@458ad742]" name="setUp" is-config="true" duration-ms="8" started-at="2018-07-17T19:48:24Z" finished-at="2018-07-17T19:48:24Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.Get_Call@458ad742]" name="setUp" is-config="true" duration-ms="8" started-at="2018-07-18T13:07:15Z" finished-at="2018-07-18T13:07:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test()[pri:0, instance:com.qa.tests.Get_Call@458ad742]" name="test" duration-ms="1534" started-at="2018-07-17T19:48:24Z" finished-at="2018-07-17T19:48:26Z">
+        <test-method status="PASS" signature="testWithOutHeaders()[pri:0, instance:com.qa.tests.Get_Call@458ad742]" name="testWithOutHeaders" duration-ms="3072" started-at="2018-07-18T13:07:15Z" finished-at="2018-07-18T13:07:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
+        </test-method> <!-- testWithOutHeaders -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.Get_Call@458ad742]" name="setUp" is-config="true" duration-ms="1" started-at="2018-07-18T13:07:18Z" finished-at="2018-07-18T13:07:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testWithHeaders()[pri:0, instance:com.qa.tests.Get_Call@458ad742]" name="testWithHeaders" duration-ms="873" started-at="2018-07-18T13:07:18Z" finished-at="2018-07-18T13:07:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithHeaders -->
       </class> <!-- com.qa.tests.Get_Call -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
